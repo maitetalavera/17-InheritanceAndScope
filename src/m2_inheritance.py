@@ -27,6 +27,25 @@
 #   Once you have done this, then change the above _TODO_ to DONE.
 ###############################################################################
 
+class Pet:
+    def __init__(self, name, age):
+        self.name=name
+        self.age=age
+    
+    def __str__(self):
+        return f"Name: {self.name}, Age: {self.age}"
+    
+    def speak(self):
+        print(f"Bark! My name is {self.name}! Bark! Bark!")
+
+class Dog(Pet):
+    def speak(self):
+         print(f"{self.name}: Bark! Bark! Bark!")
+    def fetch(self):
+        print(f"{self.name} ran to get a stick!")
+
+Dog()
+
 ###############################################################################
 # TODO: 2. (4 pts)
 #
