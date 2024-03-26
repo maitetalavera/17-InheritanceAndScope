@@ -1,5 +1,5 @@
 ###############################################################################
-# TODO: 1. (4 pts)
+# DONE: 1. (4 pts)
 #
 #   For this module, we are going to build off our Pet class that we created in
 #   m2 of the session 16 coding exercises.
@@ -36,7 +36,7 @@ class Pet:
         return f"Name: {self.name}, Age: {self.age}"
     
     def speak(self):
-        print(f"Bark! My name is {self.name}! Bark! Bark!")
+        print(f" My name is {self.name}!")
 
 class Dog(Pet):
     def speak(self):
@@ -44,10 +44,12 @@ class Dog(Pet):
     def fetch(self):
         print(f"{self.name} ran to get a stick!")
 
-Dog()
+dog1=Dog(name="Bob", age="3")
+
+dog1.speak()
 
 ###############################################################################
-# TODO: 2. (4 pts)
+# DONE: 2. (4 pts)
 #
 #   Now, write your own class of whatever type of pet you wish.
 #
@@ -66,8 +68,19 @@ Dog()
 #   Once you have done this, then change the above _TODO_ to DONE.
 ###############################################################################
 
+class Cat(Pet):
+    def __init__(self, name, age, color, breed):
+        super().__init__(name, age)
+        self.color=color
+        self.breed=breed
+    def monologue(self):
+         print(f"My fur is {self.color}: meow!")
+    def walk(self):
+        print(f"The {self.breed} cat walked to the bed!")
+
+
 ###############################################################################
-# TODO: 3. (4 pts)
+# DONE: 3. (4 pts)
 #
 #   Now let's use our classes!
 #
@@ -91,3 +104,15 @@ Dog()
 #   Once you have done this, then change the above _TODO_ to DONE.
 ###############################################################################
 
+def main(): 
+    dog1=Dog("Bob", 10)
+    cat1=Cat("Jake", 2, "Brown", "Siamese")
+    print(dog1)
+    print(cat1)
+    dog1.speak()
+    dog1.fetch()
+    cat1.speak()
+    cat1.monologue()
+    cat1.walk()
+
+main()
